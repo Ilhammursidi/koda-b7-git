@@ -1,36 +1,34 @@
-# GIT BASIC
+# GIT BASICS
 
-**1. Inisialisasi sistem git**
+## **1. Git system initialization**
 ```sh
 $ git init
 ```
 
-**2. Save into staging area (temporary)**
+## **2. Save into staging area (temporary changes)**
 ```sh
 $ git add [filepath...]
 ```
 
-**3. Commit (Permanent changes)**
+## **3. Commit (permanent changes)**
 ```sh
 $ git commit [option] [argument]
 ```
+&nbsp;&nbsp;&nbsp;&nbsp; 
 option:
-
 - ``-m`` : menambahkan pesan commit
 ```sh
 $ git commit -m "type: description"
 ```
+- ``--amend``: memperbaiki pesan commit yang baru saja terjadi
 
-- menambahkan pesan panjang
+**Commit dengan pesan panjang**
 ```sh
 $ git commit
 ```
-- memperbaiki pesan commit yang baru saja terjadi
-```sh
-$ git commit --amend
-```
-**4. Remote Repository**
-- Add remote repository
+
+## **4. Remote Repository**
+- ``remote`` command
 ```sh
 $ git remote [command] [argument]
 ```
@@ -38,7 +36,7 @@ $ git remote [command] [argument]
 # view remote list
 $ git remote
 # add remote repository
-$ git remote add [remote_name] [remote_ur]
+$ git remote add [remote_name] [remote_url]
 # view remote url
 $ git remote get-url [remote_name]
 ```
@@ -49,4 +47,34 @@ $ git remote get-url [remote_name]
 $ git push [remote_name] [branch_name]
 # sinkronisasi dari remote ke lokal
 $ git pull [remote_name] [branch_name]
+```
+
+## **5. Config**
+## **6. Cloning**
+Replikasi identik
+```sh
+# jika ingin menggunakan nama folder sama dengan nama repo
+$ git clone [url]
+# jika ingin menggunakan nama folder berbeda dari naam repo
+$ git clone [url] [namaFolder]
+```
+namaFolder diberikan jika menginginkan nama folder yang berbeda dengan nama repo
+
+## **7. History**
+- ``log`` = riwayat commit publik
+```sh
+$ git log
+```
+- ``reflog`` = riwayat git yang lebih private, tidak hanya riwayat commit namun juga riwayat lain seperti ``pull``, ``reset`` dan ``revert``
+```sh
+$ git reflog
+```
+## **8. Undoing Changes**
+- ``revert`` = menghilangkan commit dengan commit revert yang baru
+```sh
+$ git revert [commit_code]
+```
+- ``reset`` = mundur ke titik commit tertentu
+```sh
+$ git reset [commit_code]
 ```
